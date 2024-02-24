@@ -1,0 +1,45 @@
+
+body {
+    padding-top: 56px;
+}
+
+.navbar {
+    background-color: #6f42c1;
+}
+
+.navbar-brand img {
+    margin-right: 10px;
+}
+
+.navbar-toggler {
+    border: none;
+    outline: none;
+    padding: 10px;
+    background-color: #ffffff;
+}
+
+.navbar-toggler-icon {
+    background-color: #6f42c1;
+}
+
+.navbar-nav a {
+    color: #ffffff;
+    font-weight: bold;
+    transition: color 0.3s ease;
+    text-transform: uppercase;
+}
+
+.navbar-nav a:hover {
+    color: #f8f9fa;
+}
+
+.navbar-text {
+    color: #ffffff;
+}
+
+.navbar-brand {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
