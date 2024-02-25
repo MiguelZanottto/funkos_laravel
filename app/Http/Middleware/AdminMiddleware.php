@@ -9,17 +9,12 @@ use Symfony\Component\HttpFoundation\Response;
 
 class AdminMiddleware
 {
-    /**
-     * Handle an incoming request.
-     *
-     * @param Closure(Request): (Response) $next
-     */
     public function handle(Request $request, Closure $next): Response
     {
         if (Auth::check() && Auth::user()->role === 'admin') {
             return $next($request);
         }
 
-        return redirect('home')->with('error', 'No tienes acceso a esta sección');
+        return redirect('/home')->with('error', 'No tienes permisos para acceder a esta sección.');
     }
 }

@@ -18,8 +18,18 @@ class FunkosController extends Controller
     }
 
     public function show($id){
-        $funko = Funko::find($id);
-        return view('funkos.show')->with('funko', $funko);
+        try{
+            $funko = Funko::find($id);
+            if($funko){
+                return view('funkos.show')->with('funko', $funko);
+            } else {
+                flash('Ruta invalida')->error()->important();
+                return redirect()->route('funkos.index');
+            }
+        } catch (Exception $e){
+            flash('Ruta invalida')->error()->important();
+            return redirect()->route('funkos.index');
+        }
     }
 
     public function create(){
@@ -49,9 +59,19 @@ class FunkosController extends Controller
     }
 
     public function edit($id){
-        $funko = Funko::find($id);
-        $categorias = Categoria::all();
-        return view('funkos.edit')->with('funko', $funko)->with('categorias', $categorias);
+        try{
+            $funko = Funko::find($id);
+            $categorias = Categoria::all();
+            if($funko){
+                return view('funkos.edit')->with('funko', $funko)->with('categorias', $categorias);
+            } else {
+                flash('Ruta invalida')->error()->important();
+                return redirect()->route('funkos.index');
+            }
+        } catch (Exception $e){
+            flash('Ruta invalida')->error()->important();
+            return redirect()->route('funkos.index');
+        }
     }
 
 
@@ -77,8 +97,18 @@ class FunkosController extends Controller
     }
 
     public function editImage($id){
-        $funko = Funko::find($id);
-        return view('funkos.image')->with('funko', $funko);
+        try {
+            $funko = Funko::find($id);
+            if($funko){
+                return view('funkos.image')->with('funko', $funko);
+            } else {
+                flash('Ruta invalida')->error()->important();
+                return redirect()->route('funkos.index');
+            }
+        } catch (Exception $e){
+            flash('Ruta invalida')->error()->important();
+            return redirect()->route('funkos.index');
+        }
     }
 
     public function updateImage(Request $request, $id){
@@ -87,7 +117,6 @@ class FunkosController extends Controller
         ]);
         try{
             $funko = Funko::find($id);
-
             if($funko->imagen != Funko::$IMAGE_DEFAULT && Storage::exists('public/' . $funko->imagen)){
                 Storage::delete('public/' . $funko->imagen);
             }

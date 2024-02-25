@@ -36,8 +36,18 @@ class CategoriasController extends Controller
     }
 
     public function edit($id){
-        $categoria = Categoria::find($id);
-        return view('categorias.edit')->with('categoria', $categoria);
+        try{
+            $categoria = Categoria::find($id);
+            if($categoria && $id != 5){
+                return view('categorias.edit')->with('categoria', $categoria);
+            } else {
+                flash('Ruta invalida')->error()->important();
+                return redirect()->route('categorias.index');
+            }
+        } catch (Exception $e){
+            flash('Ruta invalida')->error()->important();
+            return redirect()->route('categorias.index');
+        }
     }
 
 
@@ -73,7 +83,7 @@ class CategoriasController extends Controller
             return redirect()->back();
         }
         } else {
-            flash('La Categoria Sin Categoria no se puede eliminar')->error()->important();
+            flash('Ruta invalida')->error()->important();
             return redirect()->back();
         }
     }
