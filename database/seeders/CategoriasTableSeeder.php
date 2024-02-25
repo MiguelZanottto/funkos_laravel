@@ -18,7 +18,8 @@ class CategoriasTableSeeder extends Seeder
             ['nombre' => 'REAL MADRID'],
             ['nombre' => 'BARCELONA'],
             ['nombre' => 'PSG'],
-            ['nombre' => 'MANCHESTER CITY']
+            ['nombre' => 'MANCHESTER CITY'],
+            ['nombre' => 'Sin categoria']
         ]);
     }
 }

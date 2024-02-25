@@ -10,7 +10,7 @@
     <form action="{{ route('funkos.index') }}" class="mb-3" method="get">
         @csrf
         <div class="input-group">
-            <input type="text" class="form-control" id="search" name="search" placeholder="Buscar por nombre" aria-label="Buscar" aria-describedby="basic-addon2">
+            <input type="text" class="form-control" id="search" name="search" placeholder="Buscar funko por nombre" aria-label="Buscar" aria-describedby="basic-addon2">
             <div class="input-group-append">
                 <button class="btn btn-primary" type="submit">Buscar</button>
             </div>

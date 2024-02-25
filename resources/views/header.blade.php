@@ -16,7 +16,13 @@
                 </li>
                 @if(auth()->check() && auth()->user()->role == 'admin')
                     <li class="nav-item">
+                        <a class="nav-link" href="{{route('categorias.index')}}">Categorias</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="{{route('funkos.create')}}">Agregar Funko</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('categorias.create')}}">Agregar Categoria</a>
                     </li>
                 @endif
                 <li class="nav-item">
