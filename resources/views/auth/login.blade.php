@@ -4,7 +4,7 @@
 @section('content')
 <div class="container mt-5">
     <div class="card mx-auto" style="max-width: 500px; border-radius: 10px;">
-        <div class="card-header bg-secondary text-white" style="border-top-left-radius: 10px; border-top-right-radius: 10px;">
+        <div class="card-header text-white" style="border-top-left-radius: 10px; border-top-right-radius: 10px; background-color: #6f42c1">
             <h1 class="text-center">Login</h1>
         </div>
         <div class="card-body">

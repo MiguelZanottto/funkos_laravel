@@ -122,7 +122,6 @@ class CategoriasControllerTest extends TestCase
         $response->assertRedirect('/categorias');
     }
 
-
     public function test_delete_with_user(){
         $usuario = User::factory()->create(['role' => 'user']);
         $categoria = Categoria::first();

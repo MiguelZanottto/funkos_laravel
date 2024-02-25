@@ -4,8 +4,8 @@
 
     <div class="container mt-5">
         <div class="card mx-auto" style="max-width: 500px; border-radius: 10px;">
-            <div class="card-header bg-secondary text-white" style="border-top-left-radius: 10px; border-top-right-radius: 10px;">
-                <h1 class="text-center">Registro</h1>
+            <div class="card-header text-white" style="background-color: #6f42c1; border-top-left-radius: 10px; border-top-right-radius: 10px;">
+                <h1 class="text-center" >Registro</h1>
             </div>
             <div class="card-body">
                 <form action="{{route('register')}}" method="POST">
